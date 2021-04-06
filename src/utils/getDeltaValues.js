@@ -10,7 +10,7 @@ const getDeltaValues = ({ promise, type, dateTime, nextBusinessDays }) => {
     case 'DELTA-BUSINESSDAYS': {
       const deltaBusinessDays = promise[type].deltaBusinessDays;
       const timeOfDay = promise[type].timeOfDay;
-      const date = nextBusinessDays[deltaBusinessDays - 1];
+      const date = nextBusinessDays[deltaBusinessDays ?  deltaBusinessDays - 1: deltaBusinessDays];
       const promiseDeltaBusinessDays = new Date(add(parseISO(date), { hours: timeOfDay })).toUTCString();
       return promiseDeltaBusinessDays;
     }
