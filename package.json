@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js",
+    "start": "node ./index.js",
+    "start-dev": "nodemon ./index.js",
     "lint": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.ts,.tsx"
   },
   "keywords": [],
