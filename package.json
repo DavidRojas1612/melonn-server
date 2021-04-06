@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
-    "start-dev": "nodemon ./index.js",
+    "start": "nodemon src/index.js",
     "lint": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.ts,.tsx"
   },
   "keywords": [],
@@ -15,7 +14,7 @@
     "@graphql-tools/graphql-file-loader": "^6.2.7",
     "@graphql-tools/load": "^6.2.7",
     "apisauce": "^2.0.1",
-    "apollo-server-express": "^2.22.2",
+    "apollo-server": "^2.22.2",
     "date-fns": "^2.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
