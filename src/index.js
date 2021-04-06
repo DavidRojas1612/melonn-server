@@ -9,6 +9,8 @@ const server = new ApolloServer({
   cors: true,
   typeDefs,
   resolvers,
+  introspection: true,
+  playground: true,
   context: ({ req, res }) => ({ req, res, pubsub })
 });
 const PORT = 4000;
