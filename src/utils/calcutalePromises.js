@@ -6,7 +6,7 @@ const PROMISE_DATES_NULL = {
   pack_promise_min: null,
   pack_promise_max: null,
   ship_promise_min: null,
-  ship_promise_min: null,
+  ship_promise_max: null,
   delivery_promise_min: null,
   delivery_promise_max: null,
   ready_pickup_promise_min: null,
