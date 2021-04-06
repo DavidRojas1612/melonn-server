@@ -22,7 +22,8 @@ class melonnDBcache {
 
   getById(id) {
     const prevState = this.getValues();
-    return prevState.find(order => order.id === id);
+    const finded = prevState.find(order => order.id === +id);
+    return [finded];
   }
 }
 
