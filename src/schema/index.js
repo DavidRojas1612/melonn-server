@@ -16,7 +16,7 @@ const typeDefs = gql`
   type SellOrder {
     id: ID
     seller_store: String
-    shipping_method: Int
+    shipping_method: String
     external_order_number: String
     email: String
     buyer_full_name: String

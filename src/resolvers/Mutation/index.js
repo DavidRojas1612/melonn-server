@@ -5,7 +5,7 @@ const { calculatePromises } = require('../../utils/calcutalePromises');
 module.exports = {
   createSellOrder: async (root, { cInput }) => {
     const newSellOrder = new melonnDBcache('orders');
-    const { shipping_method } = cInput;
+    const { shipping_method, ...restOrder } = cInput;
     const resMethodDetails = await melonnService.shippingMethodDetails(shipping_method);
     const resListOfOffDays = await melonnService.listOfOffDays();
     const shippingMethodDetail = resMethodDetails.data;
@@ -16,7 +16,8 @@ module.exports = {
         const sellOrderID = newSellOrder.getValues().length + 1;
         const sellOrder = {
           id: sellOrderID,
-          ...cInput
+          ...restOrder,
+          shipping_method: shippingMethodDetail.name
         };
         const sellOrderCalculate = calculatePromises({ methodDetail: shippingMethodDetail, listOfOffDays, sellOrder })
         newSellOrder.save(sellOrderCalculate);
