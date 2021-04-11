@@ -1,4 +1,5 @@
 const melonnDBcache =  require('../../data');
+const melonnService = require('../../services/melonn');
 
 module.exports = {
   getSellOrders: (root, { id }) => {
@@ -10,5 +11,18 @@ module.exports = {
     } else {
       return orders.getValues();
     }
+  },
+  getShippingMethods: async() => {
+    const methods = await melonnService.shippingMethods();
+    const MethodsResponse = methods.data;
+
+    return new Promise((resolve, reject) => {
+      if(MethodsResponse) {
+        return resolve(MethodsResponse)
+      }
+      else {
+        reject('Error system')
+      }
+    })
   }
 }

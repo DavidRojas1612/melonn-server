@@ -54,8 +54,14 @@ const typeDefs = gql`
     lineItems: [LineItemsInput]
   }
 
+  type ShippingMethods {
+    id: Int
+    name: String
+  }
+
   type Query {
     getSellOrders(id: ID): [SellOrder]
+    getShippingMethods: [ShippingMethods]
   }
 
   type Mutation {
