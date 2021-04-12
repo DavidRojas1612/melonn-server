@@ -3,13 +3,13 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
   type LineItems {
   product_name: String
-  product_qty: String
+  product_qty: Int
   product_weight: Int
   }
 
   input LineItemsInput {
     product_name: String!
-    product_qty: String!
+    product_qty: Int!
     product_weight: Int!
   }
 
@@ -18,7 +18,6 @@ const typeDefs = gql`
     seller_store: String
     shipping_method: String
     external_order_number: String
-    email: String
     buyer_full_name: String
     buyer_phone_number: String
     buyer_email: String
@@ -43,7 +42,6 @@ const typeDefs = gql`
     seller_store: String!
     shipping_method: Int!
     external_order_number: String!
-    email: String!
     buyer_full_name: String!
     buyer_phone_number: String!
     buyer_email: String!
